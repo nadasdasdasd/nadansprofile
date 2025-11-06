@@ -32,7 +32,7 @@ jobs:
       - name: Set Git user
         run: |
           git config --global user.email "nada.nisrinaseptiana@homecredit.co.id"
-          git config --global user.name "Nada.NisrinaSeptiana"
+          git config --global user.name "nada-hue"
 
       # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
