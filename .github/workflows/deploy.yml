@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - master  # Deploy only when pushing to the main branch
+      - master  # Deploy only when pushing to the master branch
 
 jobs:
   build-and-deploy:
@@ -28,13 +28,17 @@ jobs:
       - name: Build React App
         run: npm run build
 
-      # Step 5: Configure Git user for commit
+      # Step 5: Configure Git user for commit (important for gh-pages)
       - name: Set Git user
         run: |
           git config --global user.email "nisrinaseptiana026@gmail.com"
           git config --global user.name "nadasdasdasd"
 
-      # Step 6: Deploy to GitHub Pages
+      # Step 6: Configure Git for HTTPS authentication with token
+      - name: Configure Git HTTPS with token
+        run: git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
+
+      # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:
