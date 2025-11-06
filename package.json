@@ -1,5 +1,6 @@
 {
   "name": "nadansprofile",
+  "homepage": "https://nadasdasdasd.github.io/nadansprofile",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +10,9 @@
     "test": "vitest run",
     "lint": "eslint",
     "format": "prettier",
-    "check": "prettier --write . && eslint --fix"
+    "check": "prettier --write . && eslint --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.6",
@@ -29,6 +32,7 @@
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.0.4",
+    "gh-pages": "^6.3.0",
     "jsdom": "^27.0.0",
     "prettier": "^3.5.3",
     "typescript": "^5.7.2",
