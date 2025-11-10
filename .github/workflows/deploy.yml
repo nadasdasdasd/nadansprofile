@@ -40,13 +40,7 @@ jobs:
           git config --global user.email "{{ secrets.GIT_USER_EMAIL }}"
           git config --global user.name "{{ secrets.GIT_USER_NAME }}"
 
-      # Step 6: Configure SSH key
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.8.1
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      # Step 7: Deploy to GitHub Pages
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:
